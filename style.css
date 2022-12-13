@@ -21,7 +21,7 @@ nav ul i {
 }
 
 .container_1 {
-  background-color: #27858B;
+  background-color: rgb(39, 133, 139);
   display: flex;
   justify-content: space-between;
 }
@@ -32,15 +32,15 @@ nav ul i {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  height: 150px;
   padding: 0 15px;
   margin-left: 70px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, #f9fdff 0%, rgb(39, 133, 139) 100%);
+  background: linear-gradient(180deg, #f9fdff 0%, rgb(39, 133, 139));
 }
 .container_1 .profile img {
   border-radius: 50%;
-  height: 200px;
+  height: 100px;
 }
 .container_1 .name {
   padding: 20px 50px;
@@ -51,16 +51,16 @@ nav ul i {
   margin: 0;
   position: absolute;
   color: #e8eaeb;
-  font-size: 64px;
-  top: 140px;
+  font-size: 44px;
+  top: 90px;
 }
 .container_1 .name h2 {
   letter-spacing: 10px;
   margin: 0;
   position: absolute;
   color: #e8eaeb;
-  font-size: 64px;
-  top: 80px;
+  font-size: 34px;
+  top: 60px;
 }
 .container_1 .profession {
   color: #e8eaeb;
@@ -75,6 +75,7 @@ nav ul i {
   align-items: start;
   background: rgb(249, 253, 255);
   background: linear-gradient(180deg, rgb(249, 253, 255) 0%, rgb(208, 241, 244) 100%);
+  height: 100%;
 }
 .main .skills ul {
   display: flex;
@@ -87,13 +88,13 @@ nav ul i {
   cursor: pointer;
 }
 .main .skills a:hover {
-  color: #27858B;
+  color: rgb(39, 133, 139);
 }
-.main .project {
+.main .skills .project {
   width: 100%;
   padding: 0 10px;
 }
-.main .project .banner {
+.main .skills .project .banner {
   display: flex;
   flex-direction: column;
   display: flex;
@@ -101,60 +102,61 @@ nav ul i {
   align-items: center;
   padding: 0 20px;
 }
-
-.title h1 {
+.main .title h1 {
   margin: 40px 0;
 }
-.title h3 {
+.main .title h3 {
   margin: 20px 0 40px;
 }
-
-.card {
+.main .card {
   display: flex;
   padding: 20px;
 }
-.card img {
+.main .card img {
   width: 330px;
 }
-.card .info {
+.main .card .info {
   padding-left: 25px;
 }
-
-.poster {
+.main .poster {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.poster img {
+.main .poster img {
   height: 400px;
 }
-
-.catalogo {
+.main .catalogo {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.catalogo .card_img {
+.main .catalogo .card_img {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   cursor: pointer;
 }
-.catalogo .card_img img {
+.main .catalogo .card_img img {
   border: 1px solid transparent;
   opacity: 0.9;
   height: 225px;
 }
-.catalogo img:hover {
-  border: 1px solid #27858B;
+.main .catalogo img:hover {
+  border: 1px solid rgb(39, 133, 139);
   opacity: 1;
   transition: 0.7s;
+}
+.main .lista_projetos_figma {
+  border-top: 1px solid rgb(39, 133, 139);
+  padding-top: 40px;
+  display: none;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #27858B;
+  background: rgb(39, 133, 139);
   color: #e8eaeb;
 }/*# sourceMappingURL=style.css.map */

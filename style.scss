@@ -11,10 +11,35 @@
   font-size:$font-size;
   top:$top;
 }
+@mixin bg-gradient() {
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, $bg-color 0%, $bg-color2);
+}
+@mixin bg-gradient-2() {
+  background: rgb(249,253,255);
+  background: linear-gradient(180deg, rgba(249,253,255,1) 0%, rgba(208,241,244,1) 100%);
+}
+@mixin lista() {
+
+    ul{
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      min-width: 260px;
+    }
+    a{
+      padding: 15px;
+      cursor: pointer;
+    }
+    a:hover{
+      color: $bg-color2;
+    }
+  
+}
 
 $color_font: #e8eaeb;
 $bg-color: #f9fdff ;
-$bg-color2: #27858B ;
+$bg-color2: rgb(39, 133, 139) ;
 
 
 body{
@@ -52,27 +77,24 @@ nav{
 
   .profile{
     @include flex(center,center);
-    height:250px ;
+    height:150px ;
     padding:0 15px;
     margin-left: 70px;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, $bg-color 0%, rgba(39,133,139,1) 100%);
-    
+    @include bg-gradient;
     img{
       border-radius:50%;
-      height:200px ;
+      height:100px ;
     }
   }
-
+  
   .name{
     padding: 20px 50px;
-
     h1{
       padding-left: 30px;
-      @include name(64px, 140px);
+      @include name(44px, 90px);
     }
     h2{
-      @include name(64px, 80px);
+      @include name(34px, 60px);
 
     }
   }
@@ -87,26 +109,12 @@ nav{
 }
 .main{
   @include flex(start,start);
-  background: rgb(249,253,255);
-  background: linear-gradient(180deg, rgba(249,253,255,1) 0%, rgba(208,241,244,1) 100%);
+  @include bg-gradient-2;
+  
+  height: 100%;
 
   .skills{
-    ul{
-      display: flex;
-      list-style: none;
-      flex-direction: column;
-      min-width: 260px;
-      
-
-    }
-    a{
-      padding: 15px;
-      cursor: pointer;
-    }
-    a:hover{
-      color: $bg-color2;
-    }
-  }
+   @include lista;
 
   .project{
     width: 100%;
@@ -168,6 +176,13 @@ nav{
     opacity: 1;
     transition: 0.7s;
   }
+}
+.lista_projetos_figma{
+  border-top: 1px solid $bg-color2;
+  padding-top:40px;
+  display: none;
+}
+// .
 }
 
 footer{

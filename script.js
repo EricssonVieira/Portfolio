@@ -1,3 +1,5 @@
+
+
 function openPage(x) {
 
   let indice = x
@@ -10,6 +12,7 @@ function openPage(x) {
           this.responseText;
      }
   };
+  
   xhttp.open("GET", url , true);
   xhttp.send();
 }
@@ -21,7 +24,4 @@ voltarTopo = () => {
   })
 }
 
-
-const catalogo = document.querySelector('catalogo')
-const btn = document.querySelectorAll('.btn_img')
 
