@@ -87,6 +87,9 @@ nav{
 }
 .main{
   @include flex(start,start);
+  background: rgb(249,253,255);
+  background: linear-gradient(180deg, rgba(249,253,255,1) 0%, rgba(208,241,244,1) 100%);
+
   .skills{
     ul{
       display: flex;
@@ -104,6 +107,7 @@ nav{
       color: $bg-color2;
     }
   }
+
   .project{
     width: 100%;
     padding:0 10px ;
@@ -114,6 +118,15 @@ nav{
       @include flex(space-between,center);
       padding:0 20px ;
     }
+  }
+}
+.title {
+  h1{
+    margin:40px 0;
+  }
+  h3{
+    margin:20px 0 40px;
+
   }
 }
 
@@ -128,7 +141,37 @@ nav{
     padding-left: 25px;
   }
 }
+.poster{
+  @include flex(center,center);
+
+  img{
+    height: 400px;
+  }
+}
+.catalogo{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  
+  .card_img{
+    @include flex(center,center);
+    padding: 20px;
+    cursor: pointer;
+    
+    img{
+      border: 1px solid transparent;
+      opacity: 0.9;
+      height: 225px ;
+    }
+  }
+    img:hover{
+    border: 1px solid $bg-color2;
+    opacity: 1;
+    transition: 0.7s;
+  }
+}
 
 footer{
-  @include flex(center,center)
+  @include flex(center,center);
+  background: $bg-color2;
+  color:$color_font;
 }

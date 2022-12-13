@@ -1,7 +1,7 @@
 function openPage(x) {
 
   let indice = x
-  let url = `./${indice}.html`
+  let url = `./page/${indice}.html`
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -13,3 +13,15 @@ function openPage(x) {
   xhttp.open("GET", url , true);
   xhttp.send();
 }
+
+voltarTopo = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
+
+const catalogo = document.querySelector('catalogo')
+const btn = document.querySelectorAll('.btn_img')
+

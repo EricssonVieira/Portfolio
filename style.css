@@ -73,6 +73,8 @@ nav ul i {
   display: flex;
   justify-content: start;
   align-items: start;
+  background: rgb(249, 253, 255);
+  background: linear-gradient(180deg, rgb(249, 253, 255) 0%, rgb(208, 241, 244) 100%);
 }
 .main .skills ul {
   display: flex;
@@ -100,6 +102,13 @@ nav ul i {
   padding: 0 20px;
 }
 
+.title h1 {
+  margin: 40px 0;
+}
+.title h3 {
+  margin: 20px 0 40px;
+}
+
 .card {
   display: flex;
   padding: 20px;
@@ -111,8 +120,41 @@ nav ul i {
   padding-left: 25px;
 }
 
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.poster img {
+  height: 400px;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.catalogo .card_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+.catalogo .card_img img {
+  border: 1px solid transparent;
+  opacity: 0.9;
+  height: 225px;
+}
+.catalogo img:hover {
+  border: 1px solid #27858B;
+  opacity: 1;
+  transition: 0.7s;
+}
+
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #27858B;
+  color: #e8eaeb;
 }/*# sourceMappingURL=style.css.map */
