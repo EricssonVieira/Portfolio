@@ -7,28 +7,39 @@ body {
   background: #f9fdff;
 }
 
-nav ul {
+.nav__list {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 0;
-  padding-right: 20px;
+  height: 50px;
   gap: 10px;
 }
-nav ul i {
+.nav__list i {
   list-style: none;
   padding: 10px;
+  border-radius: 10px;
+  margin: 3px 0;
+}
+.nav__list i:hover {
+  background-color: #d4f5f5;
+}
+.nav .fixed {
+  position: fixed;
+  right: 0;
+  z-index: 100;
 }
 
-.container_1 {
-  background-color: rgb(39, 133, 139);
+.container {
+  background: rgb(83, 0, 156);
+  background: linear-gradient(90deg, rgb(60, 1, 110) 0%, rgb(45, 149, 190) 50%, rgb(102, 215, 243) 100%);
   display: flex;
   justify-content: space-between;
 }
-.container_1 .perfil {
+.container__perfil {
   display: flex;
 }
-.container_1 .profile {
+.container__profile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,16 +47,17 @@ nav ul i {
   padding: 0 15px;
   margin-left: 70px;
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, #f9fdff 0%, rgb(39, 133, 139));
+  background: linear-gradient(180deg, #f9fdff 0%, rgb(28, 25, 68));
 }
-.container_1 .profile img {
+.container__profile img {
   border-radius: 50%;
   height: 100px;
 }
-.container_1 .name {
+.container__name {
   padding: 20px 50px;
+  cursor: pointer;
 }
-.container_1 .name h1 {
+.container__name h1 {
   padding-left: 30px;
   letter-spacing: 10px;
   margin: 0;
@@ -54,7 +66,7 @@ nav ul i {
   font-size: 44px;
   top: 90px;
 }
-.container_1 .name h2 {
+.container__name h2 {
   letter-spacing: 10px;
   margin: 0;
   position: absolute;
@@ -62,45 +74,108 @@ nav ul i {
   font-size: 34px;
   top: 60px;
 }
-.container_1 .profession {
-  color: #e8eaeb;
+.container__profession {
   text-align: left;
   margin: auto 100px;
   font-size: 18px;
 }
-
-.main {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  background: rgb(249, 253, 255);
-  background: linear-gradient(180deg, rgb(249, 253, 255) 0%, rgb(208, 241, 244) 100%);
-  height: 100%;
+.container p {
+  animation: strobe 5s infinite;
 }
-.main .skills ul {
+
+.minimizado {
+  background: rgb(83, 0, 156);
+  background: linear-gradient(90deg, rgb(60, 1, 110) 0%, rgb(45, 149, 190) 50%, rgb(102, 215, 243) 100%);
+  height: 50px;
+  width: 100%;
+  opacity: 0;
+}
+.minimizado .perf_min {
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 30px;
+}
+.minimizado .perf_min h2 {
+  font-size: 22px;
+  padding-left: 10px;
+  animation: strobe 5s infinite;
+}
+.minimizado .perf_min h1 {
+  padding-left: 10px;
+  font-size: 22px;
+  animation: strobe 5s infinite;
+}
+
+@keyframes strobe {
+  0% {
+    color: rgb(3, 136, 153);
+  }
+  10% {
+    color: rgb(33, 164, 182);
+  }
+  20% {
+    color: rgb(69, 188, 204);
+  }
+  35% {
+    color: rgb(89, 221, 238);
+  }
+  50% {
+    color: rgb(138, 241, 255);
+  }
+  65% {
+    color: rgb(89, 221, 238);
+  }
+  80% {
+    color: rgb(69, 188, 204);
+  }
+  90% {
+    color: rgb(33, 164, 182);
+  }
+  100% {
+    color: rgb(3, 136, 153);
+  }
+}
+.main {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+.main__project {
+  padding: 0;
+}
+.main__skills {
+  background-color: #f4f0fc;
+}
+.main__skills ul {
   display: flex;
   list-style: none;
   flex-direction: column;
-  min-width: 260px;
+  width: 260px;
 }
-.main .skills a {
+.main__skills a {
   padding: 15px;
   cursor: pointer;
+  border-radius: 5px;
 }
-.main .skills a:hover {
-  color: rgb(39, 133, 139);
+.main__skills a:hover {
+  transition: all 0.5s;
+  color: #264199;
+  background-color: #d2d5d5;
 }
-.main .skills .project {
-  width: 100%;
-  padding: 0 10px;
-}
-.main .skills .project .banner {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.main__banner {
   padding: 0 20px;
+}
+.main .project {
+  padding: 0 65px;
+}
+.main .main_p {
+  width: 80%;
+  font-size: 18px;
+  margin: 10px;
+}
+.main .project {
+  display: grid;
 }
 .main .title h1 {
   margin: 40px 0;
@@ -110,13 +185,18 @@ nav ul i {
 }
 .main .card {
   display: flex;
+  flex-direction: column;
   padding: 20px;
-}
-.main .card img {
-  width: 330px;
+  margin-bottom: 30px;
+  margin-right: 50px;
+  border: solid 1px #a27df7;
 }
 .main .card .info {
   padding-left: 25px;
+}
+.main .card .activator {
+  width: 60%;
+  max-height: 386px;
 }
 .main .poster {
   display: flex;
@@ -127,28 +207,34 @@ nav ul i {
   height: 400px;
 }
 .main .catalogo {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.main .catalogo.active {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  opacity: 1;
 }
-.main .catalogo .card_img {
+.main .catalogo.active .card_img {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   cursor: pointer;
 }
-.main .catalogo .card_img img {
+.main .catalogo.active .card_img img {
   border: 1px solid transparent;
   opacity: 0.9;
   height: 225px;
 }
-.main .catalogo img:hover {
-  border: 1px solid rgb(39, 133, 139);
+.main .catalogo.active img:hover {
+  border: 1px solid rgb(28, 25, 68);
   opacity: 1;
   transition: 0.7s;
 }
 .main .lista_projetos_figma {
-  border-top: 1px solid rgb(39, 133, 139);
+  border-top: 1px solid rgb(28, 25, 68);
   padding-top: 40px;
   display: none;
 }
@@ -157,6 +243,29 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(39, 133, 139);
+  background: rgb(28, 25, 68);
   color: #e8eaeb;
+}
+
+.title {
+  font-size: 32px;
+  text-align: center;
+  width: 70%;
+}
+
+.slide-in {
+  animation: slide-in 1s forwards;
+  opacity: 0;
+  text-align: start;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-2%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

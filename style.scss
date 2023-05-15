@@ -1,4 +1,10 @@
+$color_font: #e8eaeb;
+$bg-color: #f9fdff ;
+// $bg-color2: rgb(39, 133, 139) ;
+$bg-color2: rgb(28, 25, 68) ;
+$bg-color3: #17447775 ;
 @mixin flex ($justify, $align){
+  // width: 100%;
   display: flex;
   justify-content:$justify;
   align-items: $align;
@@ -15,9 +21,20 @@
   background: rgb(255,255,255);
   background: linear-gradient(180deg, $bg-color 0%, $bg-color2);
 }
+
+$grad-color: #d4f5f5 ;
+$grad-color2: #ecedef ;
+
 @mixin bg-gradient-2() {
   background: rgb(249,253,255);
-  background: linear-gradient(180deg, rgba(249,253,255,1) 0%, rgba(208,241,244,1) 100%);
+  background: linear-gradient(180deg, $grad-color 0%, $grad-color2 100%);
+}
+
+@mixin bg-gradient-3() {
+
+  background: rgb(83,0,156);
+  background: linear-gradient(90deg, rgb(60, 1, 110) 0%, rgb(45, 149, 190) 50%, rgb(102, 215, 243) 100%);
+
 }
 @mixin lista() {
 
@@ -25,21 +42,20 @@
       display: flex;
       list-style: none;
       flex-direction: column;
-      min-width: 260px;
+      width: 260px;
     }
     a{
       padding: 15px;
       cursor: pointer;
+      border-radius: 5px;
     }
     a:hover{
-      color: $bg-color2;
+      transition: all 0.5s;
+      color: #264199;
+      background-color: #d2d5d5;
     }
   
 }
-
-$color_font: #e8eaeb;
-$bg-color: #f9fdff ;
-$bg-color2: rgb(39, 133, 139) ;
 
 
 body{
@@ -51,31 +67,44 @@ body{
   background: $bg-color ;
 
 }
-nav{
-  ul{
+.nav{
+ &__list{
     @include flex(flex-end,center);
     margin:0;
-    padding-right: 20px;
+    // padding-right: 20px;
+    height: 50px;
     gap: 10px;
     
-    
+
     i{
       list-style: none;
       padding:10px;
+      border-radius: 10px;
+      margin: 3px 0;
     };
     
+    i:hover{
+      background-color: #d4f5f5
+    }
+  }
+  .fixed{
+    position:fixed;
+    right: 0;
+    z-index: 100;
   }
 }
-.container_1{
-  background-color: $bg-color2 ;
+.container{
+  // background-color: $bg-color2 ;
+  @include bg-gradient-3 ;
+
   display: flex;
   justify-content: space-between;
 
-  .perfil{
+  &__perfil{
     display: flex;
   }
 
-  .profile{
+  &__profile{
     @include flex(center,center);
     height:150px ;
     padding:0 15px;
@@ -87,8 +116,9 @@ nav{
     }
   }
   
-  .name{
+  &__name{
     padding: 20px 50px;
+    cursor: pointer;
     h1{
       padding-left: 30px;
       @include name(44px, 90px);
@@ -99,34 +129,80 @@ nav{
     }
   }
 
-  .profession{
-    color: $color_font;
+  &__profession{
     text-align:left;
     margin:auto 100px;
     font-size: 18px;
+    
+    
+    
+    
   }
+  p{
+    animation: strobe 5s infinite;
+  }
+  
+}
+.minimizado{
+    @include bg-gradient-3();
+    height:50px ;
+    width: 100%;
+    opacity: 0;
 
+    .perf_min{
+      height:50px ;
+      @include flex(left, center );
+      margin-left: 30px;
+
+        h2{
+          font-size: 22px;
+          padding-left: 10px;
+          animation: strobe 5s infinite;
+        }
+        h1{
+          padding-left: 10px;
+          font-size: 22px;
+          animation: strobe 5s infinite;
+        }
+}
+}
+
+@keyframes strobe {
+  0% {color: rgb(3, 136, 153);}
+  10% {color: rgb(33, 164, 182);}
+  20% {color: rgb(69, 188, 204);}
+  35% {color: rgb(89, 221, 238);}
+  50% {color: rgb(138, 241, 255);}
+  65% {color: rgb(89, 221, 238);}
+  80% {color: rgb(69, 188, 204);}
+  90% {color: rgb(33, 164, 182);}
+  100% {color: rgb(3, 136, 153);}
 }
 .main{
-  @include flex(start,start);
-  @include bg-gradient-2;
-  
-  height: 100%;
+  display: grid;
+  grid-template-columns: 25% 75%;
 
-  .skills{
-   @include lista;
-
-  .project{
-    width: 100%;
-    padding:0 10px ;
-
-    .banner{
-      display: flex;
-      flex-direction: column;
-      @include flex(space-between,center);
-      padding:0 20px ;
-    }
+  &__project{
+  padding:0 ; 
   }
+  &__skills{
+    @include lista;
+    background-color: #f4f0fc; 
+  }
+
+  &__banner{
+    padding:0 20px ;
+  }
+.project{
+  padding:0 65px;
+}
+.main_p{
+  width:80%;
+  font-size: 18px;
+  margin: 10px;
+}
+.project{
+  display: grid;
 }
 .title {
   h1{
@@ -140,15 +216,23 @@ nav{
 
 .card{
   display: flex;
+  flex-direction: column;
   padding: 20px;
-  img{
-    width: 330px;
-  }
+  margin-bottom: 30px;
+  margin-right: 50px;
+
+  border: solid 1px #a27df7;
 
   .info{
     padding-left: 25px;
   }
+
+  .activator{
+    width: 60%;
+    max-height: 386px;
+  }
 }
+
 .poster{
   @include flex(center,center);
 
@@ -157,8 +241,15 @@ nav{
   }
 }
 .catalogo{
+  display:none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  
+}
+.catalogo.active{
   display:grid;
   grid-template-columns: 1fr 1fr;
+  opacity: 1;
   
   .card_img{
     @include flex(center,center);
@@ -184,9 +275,32 @@ nav{
 }
 // .
 }
-
 footer{
   @include flex(center,center);
   background: $bg-color2;
   color:$color_font;
+}
+.title{
+  font-size: 32px;
+  // margin-left: 80px;
+  text-align: center;
+  width:70%;
+
+}
+.slide-in {
+
+  animation: slide-in 1s forwards;
+  opacity: 0;
+  text-align: start;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-2%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

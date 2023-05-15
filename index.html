@@ -6,37 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
   <link rel="stylesheet" href="style.css">
+
+ 
 
   <title>Document</title>
 </head>
 <body>
-  <nav>
-    <ul>
+
+    <nav class="nav "  >
+      <ul class="nav__list fixed">
       <i class="fi fi-brands-instagram"></i>
       <i class="fi fi-brands-whatsapp"></i>
       <i class="fi fi-brands-github"></i>
       <i class="fi fi-brands-linkedin"></i>
     </ul>
   </nav>
-  <section class="container_1">
-    <div class="perfil">
-      <div class="profile">
+
+    <nav class="nav">
+      <ul class="nav__list">
+    </ul>
+  </nav>
+  <section class="container">
+    <div class="container__perfil">
+      <div class="container__profile">
         <!-- <img src="./img/fotoPerfil.jpg" alt=""> -->
       </div>
-      <div class="name">
-        <h2>Ericsson</h2>
-        <h1>Ribeiro</h1>
+      <div class="container__name">
+        <h2 id="name" onclick="atualizar()">Ericsson</h2>
+        <h1 id="surname" onclick="atualizar()">R.Vieira</h1>
       </div>
     </div>
-    <div class="profession">
-      <p>Desenvolvedor Front End</p>
-      <p>Designer UX UI</p>
+    <div class="container__profession">
+      <p class="profession">Desenvolvedor Front End</p>
+      <p class="profession">Designer UX UI</p>
     </div>
   </section>
-  <section class="main">
-    <div class="skills">
-      <ul>
+  
+  <section class="minimizado" id="container_min" style="display: none">
+    <div class="perf_min">
+        <h2 id="name" onclick="atualizar()">Ericsson</h2>
+        <h1 id="surname" onclick="atualizar()">R.Vieira</h1>
+    </div>
+  </section>
+  <section class="main" >
+    <div class="main__skills" >
+      <ul class="main__list" id="skills">
+        <a onclick="openPage('inicio')">Inicio</a>
         <a onclick="openPage('projetos')">Projetos</a>
         <a onclick="openPage('figma')">Projetos c/ Figma</a>
         <a onclick="openPage('skills')">Habilidades</a>
@@ -44,22 +62,35 @@
         <a onclick="openPage('contato')">Entre em Contato</a>
       </ul>
 
-      <div class="lista_projetos_figma" id="lista_projetos_figma">
+      <!-- <div class="lista_projetos_figma" id="lista_projetos_figma">
         <a>Designer de Interiores</a>
         <a>Restaurante</a>
-      </div>
+      </div> -->
 
     </div>
-    <div class="project" id="project">
-     <h2>Sejam Bem vindo ao meu portfolio</h2>
-     <p>Aqui verás alguns dos meus projetos que fiz enquanto estudava <strong>Html</strong>, 
-     <strong>Css</strong> e <strong>javascript</strong></p>
-    </div>
+    <div class="main__project project" id="project">
+      <section class="apresentacao">
+        <h1 class="slide-in title">Minha mente de desenvolvedor</h1>
+        <p class="main_p">Meu nome é Ericsson e sou desenvolvedor Javascript .</p>
+        <p class="main_p">Prepare-se para embarcar em uma jornada pelos meus pensamentos mais criativos e projetos mais inovadores na área de desenvolvimento web!
+    </p>
+      <p class="main_p">
+        Combinando a minha paixão pela programação com habilidades em design, trago à vida projetos incríveis criados com as ferramentas mais modernas, como Figma.
+      </p>
+      <p class="main_p">Venha conferir de perto como meus projetos em Excel que ajudaram clientes a gerir seu pequenos negocios, dando a eles mais controle sobre suas operações. 
+        Pronto(a) para se surpreender?</p>
+        <p class="main_p">É um prazer ter você aqui!</p>
+        
+        
+      </section>
+      </div>
   </section>
   <footer>
-    <p>Desevolvido por Ericsson &copy;2022</p>
+    <p>Desenvolvido por Ericsson &copy;2022</p>
   </footer>
 
+  <!-- Compiled and minified JavaScript -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   <script src="script.js"></script>
 </body>
 </html>
